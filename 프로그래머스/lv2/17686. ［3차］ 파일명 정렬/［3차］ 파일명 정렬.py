@@ -1,5 +1,3 @@
-import re 
-
 def solution(files):
     lst = []
     for i, file in enumerate(files):
