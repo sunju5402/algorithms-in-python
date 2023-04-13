@@ -1,53 +1,14 @@
-from collections import deque
 def solution(order):
-#     answer = 0
-#     stack = []
-#     q = deque(i for i in range(1, len(order) + 1))
-    
-#     for i in range(len(q)):
-#         if q[0] != order[0]:
-#             stack.append(q.popleft())
-#         else:
-#             q.popleft()
-#             answer += 1
-#             break
-        
-#     for i in range(1, len(order)):
-#         if order[i] < order[i - 1]:
-#             if stack and order[i] == stack[-1]:
-#                 stack.pop()
-#                 answer += 1
-#             else:
-#                 break
-#         else:
-#             if q and order[i] == q[0]:
-#                 q.popleft()
-#                 answer += 1
-#             elif q and order[i] > q[0]:
-#                 for j in range(len(q)):
-#                     if q[0] != order[i]:
-#                         stack.append(q.popleft())
-#                     else:
-#                         q.popleft()
-#                         answer += 1
-#                         break
-#             else:
-#                 break
-    
-#     return answer
-    answer = 0
-    stacks = []
-    N = len(order)
+    stack = []
+    size = len(order)
     i = 1
     idx = 0
-    while i < N+1:
-        stacks.append(i)
-        while stacks[-1] == order[idx]:
+    while i < size + 1:
+        stack.append(i)
+        while stack[-1] == order[idx]:
             idx += 1
-            stacks.pop()
-            if len(stacks) == 0:
+            stack.pop()
+            if len(stack) == 0:
                 break
         i += 1
-
-
     return idx
