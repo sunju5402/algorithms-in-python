@@ -5,6 +5,7 @@ def solution(elements):
     
     for i in range(2, len(elements) + 1):
         for j in range(len(e) - i):
-            s.add(sum(e[j:j + i]))
+            total = sum(e[j:j + i])
+            s.add(total)
     
     return len(s)
