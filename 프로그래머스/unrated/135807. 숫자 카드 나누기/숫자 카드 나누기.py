@@ -1,5 +1,11 @@
 from math import gcd
 
+def div(array, g):
+    for val in array:
+        if val % g == 0:
+            return True
+    return False
+        
 def solution(arrayA, arrayB):
     answer = 0
     
@@ -9,13 +15,8 @@ def solution(arrayA, arrayB):
         a_gcd = gcd(a_gcd, a)
         b_gcd = gcd(b_gcd, b)
     
-    a_div = False # arrayA의 최대공약수로 arrayB에 있는 원소들이 나눠지는지
-    b_div = False # arrayB의 최대공약수로 arrayA에 있는 원소들이 나눠지는지
-    for a, b in zip(arrayA, arrayB):
-        if not a_div and b % a_gcd == 0:
-            a_div = True    
-        if not b_div and a % b_gcd == 0:
-            b_div = True
+    a_div = div(arrayB, a_gcd) # arrayA의 최대공약수로 arrayB에 있는 원소들이 나눠지는지
+    b_div = div(arrayA, b_gcd) # arrayB의 최대공약수로 arrayA에 있는 원소들이 나눠지는지
     
     if not a_div and a_gcd != 1:
         answer = a_gcd
