@@ -14,7 +14,7 @@ def solution(k, ranges):
     for i in range(1, len(k_list)):
         mi = min(k_list[i], k_list[i - 1])
         ma = max(k_list[i], k_list[i - 1])
-        k_area.append(mi + (ma - mi) / 2)
+        k_area.append(mi + (ma - mi) / 2) # 사각형 + 삼각형
         
     for i in range(len(ranges)):
         end = len(k_area) + ranges[i][1]
