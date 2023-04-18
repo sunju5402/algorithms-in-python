@@ -1,4 +1,3 @@
 def solution(s):
     lst = list(map(int, s.split()))
-    lst.sort()
-    return str(lst[0]) + " " + str(lst[len(lst) - 1])
+    return str(min(lst)) + " " + str(max(lst))
