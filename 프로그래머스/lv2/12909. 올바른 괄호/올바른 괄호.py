@@ -11,4 +11,4 @@ def solution(s):
                     return False
         else:
             stack.append(ch)
-    return False if stack else True
+    return len(stack) == 0 
