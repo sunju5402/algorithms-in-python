@@ -7,6 +7,5 @@ def solution(n):
         if cnt_1 == 0:
             answer += 1
         else:
-            print(cnt_1)
             answer += math.comb(cnt_1 + i, i)
     return answer % 1234567
