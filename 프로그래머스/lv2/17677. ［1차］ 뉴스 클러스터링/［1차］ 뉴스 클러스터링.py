@@ -8,10 +8,11 @@ def to_dic(s):
             else:
                 dic[key] += 1
     return dic
-            
+
 def solution(str1, str2):
     dic1 = to_dic(str1)
     dic2 = to_dic(str2)
+    print(dic1, dic2)
     inter = 0
     lst = []
     for key in dic1:
