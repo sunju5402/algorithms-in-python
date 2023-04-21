@@ -7,10 +7,9 @@ def solution(m, n, board):
     while True:
         for i in range(m - 1):
             for j in range(n - 1):
-                ch = board[i][j]
-                if not ch:
+                if not board[i][j]:
                     continue
-                if board[i + 1][j] == ch and board[i][j + 1] == ch and board[i + 1][j + 1] == ch:
+                if board[i][j] == board[i + 1][j] == board[i][j + 1] == board[i + 1][j + 1]:
                     s.add((i, j))
                     s.add((i + 1, j))
                     s.add((i, j + 1))
