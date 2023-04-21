@@ -24,6 +24,7 @@ def solution(m, n, board):
         else: # 아예 겹치는 게 없을 때 반환한다.
             return answer
         
+        # 겹치는 걸 지웠을 때 빈 블록을 채우기 위해 블록을 내린다.
         while True:
             move = False
             for i in range(m - 1):
