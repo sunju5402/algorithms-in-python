@@ -7,7 +7,7 @@ def solution(m, n, board):
     while True:
         for i in range(m - 1):
             for j in range(n - 1):
-                if not board[i][j]:
+                if not board[i][j]: # 빈 블록일 경우
                     continue
                 if board[i][j] == board[i + 1][j] == board[i][j + 1] == board[i + 1][j + 1]:
                     s.add((i, j))
