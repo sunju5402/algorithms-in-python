@@ -4,7 +4,7 @@ def solution(priorities, location):
     q = deque()
     
     for i, p in enumerate(priorities):
-        q.append([p, chr(ord("A") + i)])   
+        q.append((p, i))   
     
     while q:
         m = max(q, key=lambda x : x[0])
@@ -12,7 +12,7 @@ def solution(priorities, location):
             val = q.popleft()
             if m[0] == val[0]:
                 answer += 1
-                if m[1] == chr(ord("A") + location):
+                if m[1] == location:
                     return answer
                 break
             else:
