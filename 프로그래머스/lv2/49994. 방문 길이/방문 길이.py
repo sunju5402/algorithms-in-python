@@ -1,13 +1,15 @@
-from collections import deque
-
 def solution(dirs):
-    s = set()
-    d = {'U': (0,1), 'D': (0, -1), 'R': (1, 0), 'L': (-1, 0)}
+    dic = {"U": (0, 1), "D": (0, -1), "R": (1, 0), "L": (-1, 0)}
     x, y = 0, 0
-    for i in dirs:
-        nx, ny = x + d[i][0], y + d[i][1]
+    s = set()
+    
+    for d in dirs:
+        nx = x + dic[d][0]
+        ny = y + dic[d][1]
+
         if -5 <= nx <= 5 and -5 <= ny <= 5:
-            s.add((x,y,nx,ny))
-            s.add((nx,ny,x,y))
+            s.add((x, y, nx, ny))
+            s.add((nx, ny, x, y))
             x, y = nx, ny
-    return len(s)//2
+    
+    return len(s) // 2
