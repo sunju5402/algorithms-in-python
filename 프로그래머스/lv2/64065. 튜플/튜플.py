@@ -1,13 +1,7 @@
 def solution(s):
-    answer = []
-    lst = list(map(str, s.split("},")))
-    
-    for i in range(len(lst)):
-        lst[i] = lst[i].replace("{", "").replace("}", "").split(",")
-    
-    lst.sort(key=lambda x : len(x))
-    
-    for a in lst:
-        answer.append(list((set(a) - set(answer)))[0])
-            
-    return [int(a) for a in answer]
+    s = Counter(re.findall('\d+', s))
+    print(s)
+    return list(map(int, [k for k, v in sorted(s.items(), key=lambda x: x[1], reverse=True)]))
+
+import re
+from collections import Counter
