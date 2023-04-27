@@ -7,7 +7,6 @@ def solution(skill, skill_trees):
     
     for st in skill_trees:
         dic2 = dict(dic)
-        available = True # 가능한 스킬트리인지 여부
         
         for i, ch in enumerate(skill):
             idx = st.find(ch)
@@ -15,11 +14,10 @@ def solution(skill, skill_trees):
                 if i != 0: 
                     # 현재의 스킬이 이전 스킬보다 앞에 나오거나 이전 스킬이 존재하지 않는데 현재 스킬이 존재하는 경우
                     if dic2[skill[i - 1]] == -1 or dic2[skill[i - 1]] > idx: 
-                        available = False
                         break
                 dic2[ch] = idx
                 
-        if available:
+        else:
             answer += 1
     
     return answer
