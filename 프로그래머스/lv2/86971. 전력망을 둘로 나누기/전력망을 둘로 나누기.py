@@ -38,7 +38,7 @@ def solution(n, wires):
     
     def find_parent(parent, x):
         if parent[x] != x:
-            return find_parent(parent, parent[x])
+            parent[x] = find_parent(parent, parent[x]) # return find_parent(parent, parent[x])
         return parent[x]
 
     def union_parent(parent, a, b):
@@ -54,14 +54,13 @@ def solution(n, wires):
     for i in range(len(wires)):
         p2 = list(parent)
         for j in range(len(wires)):
-            if i == j:
+            if i == j: # 간선 끊기
                 continue
             a, b = wires[j]
             union_parent(p2, a, b)
         
-        for a, b in wires:
-            p2[a] = find_parent(p2, a)
-            p2[b] = find_parent(p2, b)
+        for k in range(1, n + 1):
+            find_parent(p2, k) # p2[k] = find_parent(p2, k)
             
         answer = min(abs(p2.count(p2[wires[i][0]]) - p2.count(p2[wires[i][1]])), answer)
         
