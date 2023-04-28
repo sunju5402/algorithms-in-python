@@ -5,9 +5,8 @@ where a.member_id in (SELECT a.member_id
 from member_profile a join rest_review b on a.member_id = b.member_id
 group by a.member_id
 having count(*) = (select count(*)
-                  from member_profile a join rest_review b on a.member_id = b.member_id
-                  group by a.member_id
+                  from rest_review
+                  group by member_id
                   order by count(*) desc
                   limit 1)) 
 order by review_date, b.review_text
-                  
