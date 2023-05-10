@@ -27,22 +27,15 @@ def solution(m, musicinfos):
         if idx1 != idx2:
             l.append((time, t)) 
         else:
-            # cc = code[idx1 + len(m) + 1:]
-            # while len(cc) >= len(m):
-                # if idx1 + len(m) + 1 < len(code):
-                    cc = code[idx1 + len(m) + 1:]
-                    idx1 = cc.find(m)
-                    if idx1 == -1:
-                        continue
+            cc = code[idx1 + len(m) + 1:]
+            idx1 = cc.find(m)
+            if idx1 == -1:
+                continue
             
-                    idx2 = cc.find(m + "#")
-                    if idx1 != idx2:
-                        l.append((time, t))
-                        # break
-                # else:
-                    # break
-            
-
+            idx2 = cc.find(m + "#")
+            if idx1 != idx2:
+                l.append((time, t))
+ 
     l.sort(reverse=True, key=lambda x:x[0]) # 재생된 시간이 제일 긴 음악, 같을 경우 먼저 입력된 음악 
     if not len(l):
         return "(None)"
