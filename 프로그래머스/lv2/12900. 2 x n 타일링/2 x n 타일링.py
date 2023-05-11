@@ -3,9 +3,7 @@ def solution(n):
         return n
 
     cur, nxt = 1, 2
-    answer = 0
     for i in range(3, n + 1):
-        answer = cur + nxt
-        cur, nxt = nxt, answer
+        cur, nxt = nxt, cur + nxt
         
-    return answer % 1000000007
+    return nxt % 1000000007
