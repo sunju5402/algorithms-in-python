@@ -1,4 +1,5 @@
 import math
+
 def solution(fees, records):
     answer = []
     dic = {}
