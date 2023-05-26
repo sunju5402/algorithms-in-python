@@ -12,7 +12,7 @@ def solution(name):
         while nxt < len(name) and name[nxt] == 'A':
             nxt += 1
         
-        l =  min([l, 2 * i + len(name) - nxt, i + 2 * (len(name) - nxt)]) # 기존, 왼쪽, 오른쪽 시작
+        l =  min([l, 2 * i + len(name) - nxt, i + 2 * (len(name) - nxt)]) # 기존, 오른쪽 이동 다 하고 왼쪽으로 확인, 왼쪽 이동 다 하고 오른쪽으로 확인
     
     return answer + l
         
