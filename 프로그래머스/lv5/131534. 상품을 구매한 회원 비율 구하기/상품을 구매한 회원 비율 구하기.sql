@@ -7,6 +7,6 @@ round(count(distinct a.user_id) /
     where year(joined) = 2021), 1) as puchased_ratio
 from online_sale a join user_info b on a.user_id = b.user_id
 where year(b.joined) = 2021
-group by year(sales_date), month(sales_date)
+group by year, month
 order by year, month
 ;
