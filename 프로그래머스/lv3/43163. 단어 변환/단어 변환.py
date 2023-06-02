@@ -8,8 +8,7 @@ def solution(begin, target, words):
     while q:
         word, cnt = q.popleft()
         if word == target:
-            answer = cnt
-            break        
+            return cnt        
         for i in range(len(words)):
             diff = 0
             if not v[i]:    
@@ -21,4 +20,4 @@ def solution(begin, target, words):
                     q.append([words[i], cnt + 1])
                     v[i] = 1
 
-    return answer
+    return 0
