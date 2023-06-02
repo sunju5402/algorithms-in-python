@@ -1,7 +1,6 @@
 from collections import deque
 
 def solution(begin, target, words):
-    answer = 0
     q = deque()
     q.append([begin, 0])   
     v = [0] * len(words) 
