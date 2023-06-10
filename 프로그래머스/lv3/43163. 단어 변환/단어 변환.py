@@ -14,9 +14,11 @@ def solution(begin, target, words):
                 for j in range(len(word)):
                     if word[j] != words[i][j]:
                         diff += 1
-
-                if diff == 1:
-                    q.append([words[i], cnt + 1])
-                    v[i] = 1
+                        if diff != 1: # 차이가 1이 넘어가면 stop
+                            break
+                else:
+                    if diff == 1: # 차이가 1개일 때
+                        q.append([words[i], cnt + 1])
+                        v[i] = 1
 
     return 0
